@@ -1,4 +1,5 @@
-.DS*
+.DS_Store
+*output*
 *build*
 .idea
 .vscode

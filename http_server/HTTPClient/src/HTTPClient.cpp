@@ -63,7 +63,7 @@ std::queue<std::string> HTTPClient::splitVectorToQueue(const std::vector<char>& 
     }
     result.push(bodyString.substr(start));
 
-    return std::move(result);
+    return result;
 }
 
 std::vector<char> HTTPClient::mergeQueueToVector(std::queue<std::string>& origin, const std::string& separator) {
@@ -78,7 +78,7 @@ std::vector<char> HTTPClient::mergeQueueToVector(std::queue<std::string>& origin
     origin.push(origin.front());
     origin.pop();
 
-    return std::move(result);
+    return result;
 }
 
 void HTTPClient::recvHeader() {
@@ -90,7 +90,7 @@ void HTTPClient::recvHeader() {
     bool binaryBodyStarted = false;
     while (result.find("\r\n\r\n") == std::string::npos &&
            result.find("\n\n") == std::string::npos) {
-        buffer = std::move(socket->recvVector());
+        buffer = socket->recvVector();
 
         auto endlineIter = parseBuffer(buffer, result);
         if (endlineIter != buffer.end()) {  // if '\0' was in buffer
@@ -123,7 +123,7 @@ void HTTPClient::recvHeader() {
 
 void HTTPClient::recvBody(size_t contentLength) {
     contentLength -= body.size();
-    std::vector<char> receivedBody = std::move(socket->recvVector(contentLength));
+    std::vector<char> receivedBody = socket->recvVector(contentLength);
     body.insert(body.end(), receivedBody.begin(), receivedBody.end());
     std::cerr << "Successfully received body, size: " << body.size() << " bytes" << std::endl;
 }

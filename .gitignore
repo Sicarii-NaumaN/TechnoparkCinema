@@ -1,4 +1,8 @@
 *build*
+output
+lib
+.vscode/
 .idea
-.vscode
-*.json
+/.idea
+/idea
+static/video

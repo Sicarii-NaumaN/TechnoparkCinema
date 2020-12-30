@@ -27,13 +27,13 @@ PostFuncType Task::GetPostFunc() {
     return postFunc;
 }
 
-void Task::SetPreFunc(PreFuncType preFunc) {
+void Task::SetPreFunc(PreFuncType preFunc) { //TODO use or del
     this->preFunc = preFunc;
 }
 void Task::SetMainFunc(MainFuncType mainFunc) {
     this->mainFunc = mainFunc;
 }
-void Task::SetPostFunc(PostFuncType postFunc) {
+void Task::SetPostFunc(PostFuncType postFunc) { //TODO use or del
     this->postFunc = postFunc;
 }
 
@@ -44,10 +44,10 @@ HTTPClient& Task::GetOutput() {
     return *output;
 }
 
-void Task::SetInput(HTTPClient& input) {
+void Task::SetInput(HTTPClient& input) {  //TODO use or del
     this->input = std::make_shared<HTTPClient>(input);
 }
-void Task::SetOutput(HTTPClient& output) {
+void Task::SetOutput(HTTPClient& output) {   //TODO use or del
     this->output = std::make_shared<HTTPClient>(output);
 }
 

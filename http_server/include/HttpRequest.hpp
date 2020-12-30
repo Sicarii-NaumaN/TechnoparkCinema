@@ -20,16 +20,16 @@ class HttpRequest {
  public:
     explicit HttpRequest(const std::string &message);
 
-    std::string GetHeader(const std::basic_string<char>& headerName) const;
+    std::string GetHeader(const std::basic_string<char>& headerName) const; // Not using
     ~HttpRequest() = default;
     std::string GetURL() const;
     std::string GetHTTPVersion() const;
-    RequestMethod GetRequestMethod() const;
+    RequestMethod GetRequestMethod() const; // Not using
     std::string GetRequestMethodString() const;
     std::map<std::string, std::string> GetAllHeaders() const;
     int GetContentLength();
 
-    static std::string RequestMethodToString(RequestMethod method);
+    static std::string RequestMethodToString(RequestMethod &method);
     static RequestMethod StringToRequestMethod(const std::string& methodString);
 
  private:

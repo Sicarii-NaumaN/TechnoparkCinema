@@ -1,10 +1,8 @@
 #include <iostream>
-#include <stdexcept>
 #include <string>
 #include <map>
 
 #include "ports.hpp"
-
 #include "Master.hpp"
 
 int main(int argc, char* argv[]) {

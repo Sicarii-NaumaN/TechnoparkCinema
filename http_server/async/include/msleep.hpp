@@ -1,3 +1,3 @@
 #pragma once
 
-int msleep(long msec);
+int msleep(long &msec);

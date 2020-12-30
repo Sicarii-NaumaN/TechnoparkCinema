@@ -10,6 +10,12 @@
 
 // работа с TemplateManager, создаем экземпляр, запрашиваем parameters/templates
 // запрашиваем их у БД, после ответа передаем в GetHtml
+typedef enum {
+    FREE,
+    TEMPLATE_FOUND,
+    CYCLE_STARTED,
+    END
+} state_t;
 
 class TemplateManager {
  public:

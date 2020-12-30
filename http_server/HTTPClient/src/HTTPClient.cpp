@@ -4,10 +4,9 @@
 #include <set>
 #include <map>
 #include <memory>
+
 #include "socket.hpp"
 #include "HTTPClient.hpp"
-
-int BUFFER_SIZE = 256;
 
 
 HTTPClient::HTTPClient(std::shared_ptr<Socket> socket, int timeout) : socket(socket) {
@@ -223,7 +222,7 @@ int HTTPClient::getSd() const {
     return -1;
 }
 
-void HTTPClient::clear() {
+void HTTPClient::clear() { //TODO use or del
     header.clear();
     body.clear();
 }

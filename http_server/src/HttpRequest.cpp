@@ -1,5 +1,6 @@
 #include <string>
 #include <map>
+#include <stdexcept>
 
 #include "exceptions.hpp"
 #include "HttpRequest.hpp"
@@ -54,7 +55,7 @@ HttpRequest::HttpRequest(const std::string& message) {
     }
 }
 
-std::string HttpRequest::GetHeader(const std::basic_string<char>& headerName) const {
+std::string HttpRequest::GetHeader(const std::basic_string<char>& headerName) const { // Not using
     auto iter = headers.find(headerName);
     if (iter == headers.end()) {
         return std::string();
@@ -77,7 +78,7 @@ std::string HttpRequest::GetHTTPVersion() const {
 
 RequestMethod HttpRequest::GetRequestMethod() const {
     return request_method;
-}
+} // Not using
 
 std::string HttpRequest::GetRequestMethodString() const {
     return RequestMethodToString(request_method);
@@ -98,7 +99,7 @@ int HttpRequest::GetContentLength() {
     return result;
 }
 
-std::string HttpRequest::RequestMethodToString(RequestMethod method) {
+std::string HttpRequest::RequestMethodToString(RequestMethod &method) {
     switch (method) {
         case GET:
             return "GET";

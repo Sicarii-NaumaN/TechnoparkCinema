@@ -1,21 +1,12 @@
 #include <string>
 #include <map>
-#include <fstream>
 #include <streambuf>
 #include <queue>
 #include <iostream>
 #include <cstring>
 #include <set>
 
-#include "exceptions.hpp"
 #include "TemplateManager.hpp"
-
-typedef enum {
-    FREE,
-    TEMPLATE_FOUND,
-    CYCLE_STARTED,
-    END
-} state_t;
 
 using std::string;
 
@@ -82,7 +73,6 @@ void TemplateManager::InsertTemplates() {
                 state = FREE;
                 break;
             }
-
             default:
                 break;
         }

@@ -188,13 +188,13 @@ void PostProcess(map<string, string>& headers, vector<char>& body, HTTPClient& o
                               (headers["Connection"] == "Keep-Alive"),
                               body);
         if ((headers["http_version"] == "1.1" && headers["Conection"] != "close") || headers["Connection"] == "Keep-Alive")
-            output.send(response.GetData(), true);  // will fix later
+            output.send(response.GetData(), true);  // will fix later //TODO fix
         else
             output.send(response.GetData(), true);
     }
 }
 
-//  {[movietittle,moviedescription,starphoto,starname,movielogo,moviename,videolink,recommended,tittles]}
+
 static map<string, string> ProcessTemplatesInDB(const std::set<string>& params, size_t ID) {
     map<string, string> result_map;
 
@@ -202,7 +202,6 @@ static map<string, string> ProcessTemplatesInDB(const std::set<string>& params, 
     pqxx::connection con(connection_string.c_str());
 
     pqxx::work wrk(con);
-    //pqxx::result res = wrk.exec("SELECT m_id,title,description,rating FROM MOVIES WHERE (m_id between "+std::to_string(ID)+" and "+std::to_string(ID+1)+")");
 
     pqxx::result number = wrk.exec("SELECT COUNT(m_id) FROM MOVIES");
     if (ID >= std::stoul(number[0][0].as<string>()))

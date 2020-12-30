@@ -39,11 +39,11 @@ HttpRequestCreator::HttpRequestCreator(const string& HTTPVersion,
     FormRequestData();
 }
 
-string HttpRequestCreator::GetHTTPVersion() const {
+string HttpRequestCreator::GetHTTPVersion() const { //TODO use or del
     return http_version;
 }
 
-string HttpRequestCreator::GetHeader() const {
+string HttpRequestCreator::GetHeader() const {  //TODO use or del
     return requestHeader;
 }
 std::vector<char> HttpRequestCreator::GetRequest() const {
@@ -136,7 +136,7 @@ string HttpRequestCreator::GetQueryParameter(const string &parameter_name) const
         value = "";
     }
 
-    return value;
+    return value; //TODO use or del
 }
 
 void HttpRequestCreator::ProcessQueryString() {
@@ -152,8 +152,8 @@ void HttpRequestCreator::ProcessQueryString() {
 
         query[key] = value;
     }
-}
+} //TODO use or del
 
 std::map<string, string> HttpRequestCreator::GetQueryString() const {
     return query;
-}
+} //TODO use or del

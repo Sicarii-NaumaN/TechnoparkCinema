@@ -1,26 +1,17 @@
-#include <iostream>
 #include <string>
-#include <fstream>
 #include <vector>
-#include <sys/stat.h>
-#include <cstdlib>
-#include <cstring>
-#include <algorithm>
 #include <set>
-#include <random>
-#include <chrono>
-
 
 #include "HttpResponse.hpp"
 #include "HttpRequest.hpp"
 #include "exceptions.hpp"
 
 
-std::string HttpResponse::GetHTTPVersion() const {
+std::string HttpResponse::GetHTTPVersion() const { // Not using
     return http_version;
 }
 
-std::string HttpResponse::GetHeader() const {
+std::string HttpResponse::GetHeader() const { // Not using
     return response_header;
 }
 std::vector<char> HttpResponse::GetData() const {

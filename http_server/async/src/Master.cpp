@@ -1,19 +1,12 @@
 #include <memory>
-#include <vector>
-#include <queue>
 #include <map>
 
 #include "msleep.hpp"
-
-#include "socket.hpp"
-#include "HTTPClient.hpp"
 #include "Task.hpp"
-#include "TaskBuilder.hpp"
-#include "TasksController.hpp"
 #include "Listener.hpp"
 #include "Master.hpp"
 
-Master::Master(std::map<std::string, int>& ports, size_t workersAmount):
+Master::Master(std::map<std::string, int>& ports,const size_t &workersAmount):
         ports(ports),
         unprocessedClients(),
         unprocessedClientsMutex(std::make_shared<std::mutex>()),

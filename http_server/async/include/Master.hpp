@@ -37,7 +37,7 @@ class Master {
     bool stop;
 
  public:
-    explicit Master(std::map<std::string, int>& ports, size_t workersAmount = 1);
+    explicit Master(std::map<std::string, int>& ports,const  size_t &workersAmount = 1);
     virtual ~Master();
 
     //  static void SetSocket(std::unique_ptr<Socket> socket);

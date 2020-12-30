@@ -1,8 +1,8 @@
-#include <time.h>
-#include <errno.h>
+#include <ctime>
+#include <cerrno>
 
-int msleep(long msec) {
-    struct timespec ts;
+int msleep(long &msec) {
+    struct timespec ts{};
     int res;
 
     if (msec < 0) {

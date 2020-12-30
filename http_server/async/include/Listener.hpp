@@ -20,7 +20,7 @@ class Listener {
     void Loop();
  
  public:
-    explicit Listener(int port,
+    explicit Listener(int &port,
                       std::queue<HTTPClient>& unprocessedClients,
                       std::shared_ptr<std::mutex> unprocessedClientsMutex);
 

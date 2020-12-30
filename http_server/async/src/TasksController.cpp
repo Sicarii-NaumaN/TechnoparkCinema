@@ -40,7 +40,7 @@ void TasksController::Loop() {
 
             haveDataMutex->lock();
             while (!buffer.empty()) {
-                haveData.push(std::move(buffer.front()));
+                haveData.push(std::move(buffer.front())); //TODO optimize
                 buffer.pop();
             }
             haveDataMutex->unlock();
